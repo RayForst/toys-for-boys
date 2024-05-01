@@ -1,0 +1,16 @@
+{
+  "name": "toys-for-boys",
+  "version": "0.0.1",
+  "description": "Some toys to play with",
+  "main": "index.js",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "snowpack": "^3.8.8"
+  }
+}
