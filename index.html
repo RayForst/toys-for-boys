@@ -4,23 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/styles/main.css" />
   </head>
   <body>
     <script
       type="module"
       src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"
     ></script>
+    <script src="https://unpkg.com/two-up-element@1"></script>
     <main>
       <h1>Hello snowpack!</h1>
-      <h2><app-drawer>Hello</app-drawer></h2>
-      <h2>Model viewer component</h2>
+      <h2><app-drawer data-name="Degu"></app-drawer></h2>
       <model-viewer
         alt="Degu low poly model"
         src="assets/degu_lowpoly.glb"
+        auto-rotate
+        camera-orbit="235deg 55deg 4m"
         ar
         shadow-intensity="1"
         camera-controls
         touch-action="pan-y"
+        style="width: 50vw; height: 40vw"
       ></model-viewer>
       <div class="sketchfab-embed-wrapper">
         <iframe
@@ -37,40 +41,29 @@
           src="https://sketchfab.com/models/33a8757d02aa4eb796f58ca5469778e0/embed"
         >
         </iframe>
-        <p
-          style="
-            font-size: 13px;
-            font-weight: normal;
-            margin: 5px;
-            color: #4a4a4a;
-          "
-        >
-          <a
-            href="https://sketchfab.com/3d-models/water-tank-for-metaversecity-of-water-v12-33a8757d02aa4eb796f58ca5469778e0?utm_medium=embed&utm_campaign=share-popup&utm_content=33a8757d02aa4eb796f58ca5469778e0"
-            target="_blank"
-            rel="nofollow"
-            style="font-weight: bold; color: #1caad9"
-          >
-            Water tank for metaverse,City of Water 【水の都】v1.2
-          </a>
-          by
-          <a
-            href="https://sketchfab.com/osakanaWatch?utm_medium=embed&utm_campaign=share-popup&utm_content=33a8757d02aa4eb796f58ca5469778e0"
-            target="_blank"
-            rel="nofollow"
-            style="font-weight: bold; color: #1caad9"
-          >
-            MEA AQUA
-          </a>
-          on
-          <a
-            href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=33a8757d02aa4eb796f58ca5469778e0"
-            target="_blank"
-            rel="nofollow"
-            style="font-weight: bold; color: #1caad9"
-            >Sketchfab</a
-          >
-        </p>
+      </div>
+
+      <div class="demo">
+        <two-up>
+          <div class="light">
+            <h1>The Light Side</h1>
+          </div>
+          <div class="dark">
+            <h1>The Dark Side</h1>
+          </div>
+        </two-up>
+      </div>
+
+      <h3><pre>&lt;two-up orientation=vertical&gt;</pre></h3>
+      <div class="demo vertical">
+        <two-up orientation="vertical">
+          <div class="light">
+            <h1>The Light Side</h1>
+          </div>
+          <div class="dark">
+            <h1>The Dark Side</h1>
+          </div>
+        </two-up>
       </div>
     </main>
     <script src="js/index.js"></script>

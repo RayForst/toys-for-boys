@@ -1,4 +1,34 @@
 class AppDrawer extends HTMLElement {
+  static get observedAttributes() {
+    return ["data-name"];
+  }
+
+  render() {
+    const dateFormated = new Intl.DateTimeFormat("default", {
+      year: this.getAttribute("year") || undefined,
+      month: this.getAttribute("month") || undefined,
+      day: this.getAttribute("day") || undefined,
+      hour: this.getAttribute("hour") || undefined,
+      minute: this.getAttribute("minute") || undefined,
+      second: this.getAttribute("second") || undefined,
+      timeZoneName: this.getAttribute("time-zone-name") || undefined
+    }).format(new Date());
+
+    this.innerHTML = `Hello ${this.name} ` + dateFormated;
+  }
+
+  get name() {
+    return this.getAttribute("data-name");
+  }
+  // lifecycle hooks
+  connectedCallback() {
+    this.render();
+  }
+
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    this.render();
+  }
+
   // A getter/setter for an open property.
   get open() {
     return this.hasAttribute("open");
