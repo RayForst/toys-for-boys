@@ -14,7 +14,12 @@
     <script src="https://unpkg.com/two-up-element@1"></script>
     <main>
       <h1>Hello snowpack!</h1>
-      <h2><app-drawer data-name="Degu"></app-drawer></h2>
+      <h2>
+        <app-drawer data-name="Degu">
+          <span>Light DOM Text</span>
+          <button>Light DOM Button</button>
+        </app-drawer>
+      </h2>
       <model-viewer
         alt="Degu low poly model"
         src="assets/degu_lowpoly.glb"

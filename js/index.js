@@ -1,6 +1,36 @@
+const template = document.createElement("template");
+template.innerHTML = `
+<style>
+:host {
+  padding: 20px;
+  background-color: var(--bg);
+  color: var(--text);
+}
+</style>
+<slot></slot>
+<span>Shadow DOM Text</span>
+<button>Shadow Dom Button</button>
+`;
+
 class AppDrawer extends HTMLElement {
   static get observedAttributes() {
     return ["data-name"];
+  }
+
+  constructor(...args) {
+    super(...args);
+
+    this._shadowRoot = this.attachShadow({ mode: "open" });
+    this._shadowRoot.appendChild(template.content.cloneNode(true));
+
+    // Setup a click listener on <app-drawer> itself.
+    this.addEventListener("click", (e) => {
+      // Don't toggle the drawer if it's disabled.
+      if (this.disabled) {
+        return;
+      }
+      this.toggleDrawer();
+    });
   }
 
   render() {
@@ -14,7 +44,10 @@ class AppDrawer extends HTMLElement {
       timeZoneName: this.getAttribute("time-zone-name") || undefined
     }).format(new Date());
 
-    this.innerHTML = `Hello ${this.name} ` + dateFormated;
+    this.insertAdjacentHTML(
+      "afterend",
+      `<br> Hello ${this.name} ` + dateFormated
+    );
   }
 
   get name() {
@@ -56,22 +89,6 @@ class AppDrawer extends HTMLElement {
     } else {
       this.removeAttribute("disabled");
     }
-  }
-
-  // Can define constructor arguments if you wish.
-  constructor() {
-    // If you define a constructor, always call super() first!
-    // This is specific to CE and required by the spec.
-    super();
-
-    // Setup a click listener on <app-drawer> itself.
-    this.addEventListener("click", (e) => {
-      // Don't toggle the drawer if it's disabled.
-      if (this.disabled) {
-        return;
-      }
-      this.toggleDrawer();
-    });
   }
 
   toggleDrawer() {
