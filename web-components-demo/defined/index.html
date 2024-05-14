@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>:defined demo</title>
+    <script src="main.js" defer></script>
+    <style>
+      defined-demo:not(:defined) {
+        display: block;
+        background: red;
+        width: 100%;
+      }
+
+      defined-demo:not(:defined)::after {
+        content: ":not(:defined)";
+        display: block;
+        font-weight: bold;
+      }
+
+      defined-demo:defined {
+        display: block;
+        background: greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <defined-demo text=":defined"></defined-demo>
+  </body>
+</html>

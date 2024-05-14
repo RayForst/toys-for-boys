@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/web-components.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Components</h1>
+      <div class="components-preview">
+        <component-preview>
+          <a slot="title" href="https://modelviewer.dev/" target="_blank"
+            >Model Viewer</a
+          >
+          <p slot="description">
+            Easily display interactive 3D models on the web & in AR
+          </p>
+
+          <model-viewer
+            slot="component"
+            alt="Degu low poly model"
+            src="assets/degu_lowpoly.glb"
+            auto-rotate
+            camera-orbit="235deg 55deg 4m"
+            ar
+            shadow-intensity="1"
+            camera-controls
+            touch-action="pan-y"
+          ></model-viewer>
+        </component-preview>
+
+        <component-preview>
+          <a href="https://github.com/GoogleChromeLabs/two-up" slot="title"
+            >Two-up</a
+          >
+          <p slot="description">A web component to compare two DOM elements</p>
+          <two-up slot="component">
+            <div class="light">
+              <h1>The Light Side</h1>
+            </div>
+            <div class="dark">
+              <h1>The Dark Side</h1>
+            </div>
+          </two-up>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">Edit-word </span>
+          <p slot="description">
+            You can click/focus the element to reveal a text input that can then
+            be used to edit the word(s)
+          </p>
+          <iframe
+            slot="component"
+            src="/web-components/edit-word/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">TODO</span>
+          <iframe
+            slot="component"
+            src="/web-components/editable-list/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">Element Details</span>
+          <iframe
+            slot="component"
+            src="/web-components/element-details/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">Expanding list web component </span>
+          <iframe
+            slot="component"
+            src="/web-components/expanding-list-web-component/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">Open Shadow VS Closed Shadow </span>
+          <p slot="description">Difference in Event (check console)</p>
+          <iframe
+            slot="component"
+            src="/web-components/life-cycle-callbacks/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">Open Shadow VS Closed Shadow </span>
+          <p slot="description">Difference in Event (check console)</p>
+          <iframe
+            slot="component"
+            src="/web-components/popup-info-box-external-stylesheet/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">Open Shadow VS Closed Shadow </span>
+          <p slot="description">Difference in Event (check console)</p>
+          <iframe
+            slot="component"
+            src="/web-components/popup-info-box-web-component/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">Open Shadow VS Closed Shadow </span>
+          <p slot="description">Difference in Event (check console)</p>
+          <iframe
+            slot="component"
+            src="/web-components/shadow-part/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">Open Shadow VS Closed Shadow </span>
+          <p slot="description">Difference in Event (check console)</p>
+          <iframe
+            slot="component"
+            src="/web-components/slotted-pseudo-element/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">Open Shadow VS Closed Shadow </span>
+          <p slot="description">Difference in Event (check console)</p>
+          <iframe
+            slot="component"
+            src="/web-components/word-count-web-component/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+      </div>
+    </main>
+    <script src="js/component-preview.js"></script>
+    <script src="https://unpkg.com/two-up-element@1"></script>
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"
+    ></script>
+  </body>
+</html>

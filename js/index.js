@@ -5,6 +5,10 @@ template.innerHTML = `
   padding: 20px;
   background-color: var(--bg);
   color: var(--text);
+  display: block;
+}
+:host:state(hidden) {
+  border: none
 }
 </style>
 <slot></slot>
@@ -14,11 +18,12 @@ template.innerHTML = `
 
 class AppDrawer extends HTMLElement {
   static get observedAttributes() {
-    return ["data-name"];
+    return ["state"];
   }
 
   constructor(...args) {
     super(...args);
+    this._internals = this.attachInternals();
 
     this._shadowRoot = this.attachShadow({ mode: "open" });
     this._shadowRoot.appendChild(template.content.cloneNode(true));
@@ -34,20 +39,33 @@ class AppDrawer extends HTMLElement {
   }
 
   render() {
-    const dateFormated = new Intl.DateTimeFormat("default", {
-      year: this.getAttribute("year") || undefined,
-      month: this.getAttribute("month") || undefined,
-      day: this.getAttribute("day") || undefined,
-      hour: this.getAttribute("hour") || undefined,
-      minute: this.getAttribute("minute") || undefined,
-      second: this.getAttribute("second") || undefined,
-      timeZoneName: this.getAttribute("time-zone-name") || undefined
-    }).format(new Date());
+    // const dateFormated = new Intl.DateTimeFormat("default", {
+    //   year: this.getAttribute("year") || undefined,
+    //   month: this.getAttribute("month") || undefined,
+    //   day: this.getAttribute("day") || undefined,
+    //   hour: this.getAttribute("hour") || undefined,
+    //   minute: this.getAttribute("minute") || undefined,
+    //   second: this.getAttribute("second") || undefined,
+    //   timeZoneName: this.getAttribute("time-zone-name") || undefined
+    // }).format(new Date());
+    // this.insertAdjacentHTML(
+    //   "afterend",
+    //   `<br> Hello ${this.name} ` + dateFormated
+    // );
+  }
 
-    this.insertAdjacentHTML(
-      "afterend",
-      `<br> Hello ${this.name} ` + dateFormated
-    );
+  get collapsed() {
+    return this._internals.states.has("hidden");
+  }
+
+  set collapsed(flag) {
+    if (flag) {
+      // Existence of identifier corresponds to "true"
+      this._internals.states.add("hidden");
+    } else {
+      // Absence of identifier corresponds to "false"
+      this._internals.states.delete("hidden");
+    }
   }
 
   get name() {
@@ -97,3 +115,28 @@ class AppDrawer extends HTMLElement {
 }
 
 customElements.define("app-drawer", AppDrawer);
+
+class MyCustomElement extends HTMLElement {
+  constructor() {
+    super();
+    this._internals = this.attachInternals();
+    // this._internals.states.add("hidden");
+  }
+
+  get collapsed() {
+    return this._internals.states.has("--active");
+  }
+
+  set collapsed(flag) {
+    if (flag) {
+      // Existence of identifier corresponds to "true"
+      this._internals.states.add("--active");
+    } else {
+      // Absence of identifier corresponds to "false"
+      this._internals.states.delete("--active");
+    }
+  }
+}
+
+// Register the custom element
+customElements.define("my-custom-element", MyCustomElement);

@@ -7,46 +7,27 @@
     <link rel="stylesheet" href="/styles/main.css" />
   </head>
   <body>
-    <script
-      type="module"
-      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"
-    ></script>
     <script src="https://unpkg.com/two-up-element@1"></script>
     <main>
       <h1>Hello snowpack!</h1>
+      <a href="/components.html">Components</a>
+      <a href="/components-behavior.html">Components Behavior</a>
       <h2>
         <app-drawer data-name="Degu">
           <span>Light DOM Text</span>
           <button>Light DOM Button</button>
         </app-drawer>
+
+        <app-drawer state="hidden" data-name="Degu">
+          <span>Light DOM Text</span>
+          <button>Light DOM Button</button>
+        </app-drawer>
+
+        <my-custom-element>Hidden</my-custom-element>
+        <my-custom-element state="--active">Not Hidden</my-custom-element>
+        <my-custom-element state="hidden">Not Hidden 2</my-custom-element>
+        <app-counter>Counter</app-counter>
       </h2>
-      <model-viewer
-        alt="Degu low poly model"
-        src="assets/degu_lowpoly.glb"
-        auto-rotate
-        camera-orbit="235deg 55deg 4m"
-        ar
-        shadow-intensity="1"
-        camera-controls
-        touch-action="pan-y"
-        style="width: 50vw; height: 40vw"
-      ></model-viewer>
-      <div class="sketchfab-embed-wrapper">
-        <iframe
-          title="Water tank for metaverse,City of Water 【水の都】v1.2"
-          frameborder="0"
-          allowfullscreen
-          mozallowfullscreen="true"
-          webkitallowfullscreen="true"
-          allow="autoplay; fullscreen; xr-spatial-tracking"
-          xr-spatial-tracking
-          execution-while-out-of-viewport
-          execution-while-not-rendered
-          web-share
-          src="https://sketchfab.com/models/33a8757d02aa4eb796f58ca5469778e0/embed"
-        >
-        </iframe>
-      </div>
 
       <div class="demo">
         <two-up>
@@ -71,5 +52,6 @@
       </div>
     </main>
     <script src="js/index.js"></script>
+    <script src="js/app-counter.js"></script>
   </body>
 </html>

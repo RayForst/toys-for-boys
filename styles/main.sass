@@ -1,7 +1,7 @@
 @import 'reset-css/sass/_reset.scss'
 
 body
-  padding: 50px 3vw
+  padding: 24px 3vw
   font-size: 1.8em
   background: #eee
   font: 100%/1.3 system-ui,helvetica,sans-serif
@@ -9,14 +9,16 @@ body
 
 h1
   font-size: 2.235rem
+  margin-bottom: 24px
 
 h2
   font-size: 1.68rem
-
+  margin-bottom: 12px
 
 h1,h2
-  margin-bottom: 20px
   font-weight: bold
+  a 
+    color: inherit
 
 .demo
   background: #fff
@@ -42,6 +44,30 @@ two-up
 app-drawer
   --bg: orange
   --text: red
-  
+  border: 3px dashed red
+
+  :state(--hidden)
+    border: none
+
   button
     background: olive
+
+my-custom-element
+  border: dashed green
+
+
+my-custom-element:--active
+  border: none
+
+my-custom-element:state(--active)
+  border: none
+
+my-custom-element:not(:state(--active))
+  border: 4px solid blue
+
+.components-preview
+  display: grid
+  gap: 24px
+  grid-template-columns: repeat(3, 1fr)
+  grid-template-rows: 300px
+  padding-bottom: 64px

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/web-components.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Components Behavior</h1>
+      <div class="components-preview">
+        <component-preview>
+          <span slot="title">:defined</span>
+          <p slot="description">
+            Useful if we want to style our component when its not defined
+            <code>:not(:defined)</code>
+          </p>
+          <iframe
+            slot="component"
+            src="/web-components-demo/defined/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">:host & :host-context</span>
+          <p slot="description">
+            The :host CSS pseudo-class selects the shadow host of the shadow DOM
+            The :host-context CSS pseudo-class check context where component is
+            defined
+          </p>
+          <iframe
+            slot="component"
+            src="/web-components-demo/host/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">Slotchange event example </span>
+          <p slot="description">
+            An example that takes as its two slot values a list of possible
+            choices, and a description for the selected choice. Multiple
+            paragraphs are included inside the element containing all the
+            possible descriptions; when a choice is clicked, its corresponding
+            description paragraph is given an appropriate slot attribute so that
+            it appears in the second slot. This example is written to
+            demonstrate usage of the slotchange attribute, and features of the
+            HTMLSlotElement interface
+          </p>
+          <iframe
+            slot="component"
+            src="/web-components-demo/slotchange/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title"
+            ><code>composed</code> and <code>composedPath</code> demo</span
+          >
+          <p slot="description">
+            A very simple example that shows the behavior of the Event object
+            composed and composedPath properties
+          </p>
+          <iframe
+            slot="component"
+            src="/web-components-demo/composed/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">Open Shadow VS Closed Shadow </span>
+          <p slot="description">Difference in Event (check console)</p>
+          <iframe
+            slot="component"
+            src="/web-components/life-cycle-callbacks/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">Open Shadow VS Closed Shadow </span>
+          <p slot="description">Difference in Event (check console)</p>
+          <iframe
+            slot="component"
+            src="/web-components/popup-info-box-external-stylesheet/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">Open Shadow VS Closed Shadow </span>
+          <p slot="description">Difference in Event (check console)</p>
+          <iframe
+            slot="component"
+            src="/web-components/popup-info-box-web-component/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">Open Shadow VS Closed Shadow </span>
+          <p slot="description">Difference in Event (check console)</p>
+          <iframe
+            slot="component"
+            src="/web-components/shadow-part/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">Open Shadow VS Closed Shadow </span>
+          <p slot="description">Difference in Event (check console)</p>
+          <iframe
+            slot="component"
+            src="/web-components/slotted-pseudo-element/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+
+        <component-preview>
+          <span slot="title">Open Shadow VS Closed Shadow </span>
+          <p slot="description">Difference in Event (check console)</p>
+          <iframe
+            slot="component"
+            src="/web-components/word-count-web-component/index.html"
+            width="100%"
+            height="300"
+          ></iframe>
+        </component-preview>
+      </div>
+    </main>
+    <script src="js/component-preview.js"></script>
+    <script src="https://unpkg.com/two-up-element@1"></script>
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"
+    ></script>
+  </body>
+</html>
