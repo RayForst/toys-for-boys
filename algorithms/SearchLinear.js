@@ -1,8 +1,8 @@
-const arr = [82, 73, 54, 26, 39, 77, 57, 82, 55, 68, 99, 23, 95, 42, 89];
+const array = [82, 73, 54, 26, 39, 77, 57, 82, 55, 68, 99, 23, 95, 42, 89];
 let count = 0;
 
-function searchLinear(arr, item) {
-  for (let [i, value] of arr.entries()) {
+function searchLinear(array, item) {
+  for (let [i, value] of array.entries()) {
     ++count;
     if (item === value) return i;
   }
@@ -10,4 +10,4 @@ function searchLinear(arr, item) {
   return null;
 }
 
-console.log(`Result: ${searchLinear(arr, 39)}, Count: ${count}`);
+console.log(`Result: ${searchLinear(array, 39)}, Count: ${count}`);
