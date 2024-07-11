@@ -1,0 +1,44 @@
+.swiper-button-prev,
+.swiper-button-next {
+  --swiper-navigation-size: 70px;
+  --swiper-navigation-sides-offset: 0;
+  width: var(--swiper-navigation-size) !important;
+
+  // new image
+  &::after {
+    background-image: url('@/assets/Arrow.svg');
+    content: '' !important;
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.5);
+
+    @include respond-to($breakpoint-lg) {
+      transform: scale(1);
+    }
+  }
+}
+
+.swiper-button-prev {
+  &::after {
+    transform: rotate(-180deg) scale(0.5);
+
+    @include respond-to($breakpoint-lg) {
+      transform: rotate(-180deg) scale(1);
+    }
+  }
+}
+
+.custom-swiper {
+  --swiper-pagination-color: var(--color-accent);
+  --swiper-pagination-left: auto;
+  --swiper-pagination-bullet-width: 50px;
+  --swiper-pagination-bullet-height: 5px;
+  --swiper-pagination-bullet-horizontal-gap: 5px;
+  --swiper-pagination-bullet-border-radius: 0;
+  --swiper-pagination-bullet-inactive-color: #fff;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bottom: 34px;
+  --swiper-pagination-bullet-border-radius: 3px;
+}
