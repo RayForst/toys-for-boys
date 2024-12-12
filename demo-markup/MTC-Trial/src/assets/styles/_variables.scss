@@ -1,7 +1,0 @@
-$breakpoint-lg: 1080px;
-
-@mixin respond-to($breakpoint) {
-  @media (min-width: $breakpoint) {
-    @content;
-  }
-}
