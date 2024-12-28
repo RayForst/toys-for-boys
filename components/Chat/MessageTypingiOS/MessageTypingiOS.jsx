@@ -7,7 +7,7 @@ import "./MessageTypingiOS.scss";
 /** Primary UI component for user interaction */
 export const MessageTypingiOS = () => {
   return (
-    <div class="chat-bubble">
+    <div class="chat-bubble-ios">
       <div class="loading">
         <div class="dot one"></div>
         <div class="dot two"></div>
@@ -30,5 +30,5 @@ export const MessageTypingiOS = () => {
 //   /** Optional click handler */
 //   onClick: PropTypes.func
 // };
-
+фф;
 MessageTypingiOS.defaultProps = {};
