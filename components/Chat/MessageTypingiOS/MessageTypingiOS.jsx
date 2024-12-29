@@ -30,5 +30,4 @@ export const MessageTypingiOS = () => {
 //   /** Optional click handler */
 //   onClick: PropTypes.func
 // };
-фф;
 MessageTypingiOS.defaultProps = {};
