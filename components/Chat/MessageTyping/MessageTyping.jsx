@@ -7,7 +7,7 @@ import "./MessageTyping.scss";
 /** Primary UI component for user interaction */
 export const MessageTyping = () => {
   return (
-    <div class="chat-bubble">
+    <div class="chat-bubble-1">
       <div class="typing">
         <div class="dot"></div>
         <div class="dot"></div>
